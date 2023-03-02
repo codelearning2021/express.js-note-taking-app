@@ -1,3 +1,23 @@
+// // require express and middleware
+// const express = require('express');
+// const fs = require('fs');
+
+// const path = require('path');
+
+// const { clog } = require('./middleware/clog');
+// const api = require('./index.js');
+
+// // port listener
+// const PORT = process.env.PORT || 3001;
+
+// const app = express();
+
+
+
+
+
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -26,7 +46,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('/api/notes', {
+  fetch('./notes.html', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -34,7 +54,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('/api/notes', {
+  fetch('./notes.html', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -43,7 +63,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+  fetch(`./notes.html/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
