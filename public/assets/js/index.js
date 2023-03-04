@@ -1,16 +1,3 @@
-// // require express and middleware
-const express = require('express');
-const fs = require('fs');
-
-const path = require('path');
-
-const { clog } = require('./middleware/clog');
-const api = require('./index.js');
-
-// port listener
-const PORT = process.env.PORT || 3001;
-
-const app = express();
 
 
 
@@ -46,7 +33,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  app.fetch('api/notes', {
+  fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -54,7 +41,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  app.post('api/notes', {
+  fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -64,7 +51,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  app.delete(`api/notes/${id}`, {
+  fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
