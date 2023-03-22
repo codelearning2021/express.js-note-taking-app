@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const {v4: uuidv4} = require("uuid")
 
 const path = require('path');
 
@@ -36,17 +37,46 @@ app.post('/api/notes', (req, res) => {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
-      req.body.id = parsedData.length + 1;
-      parsedData.push(req.body);
+      const newNote = {
+        title: req.body.title,
+        text:req.body.text,
+        id: uuidv4()
+      }
+      parsedData.push(newNote);
 
       fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) =>
         err ? console.error(err) : console.info(`\n Data written to db.json`)
       )
     }
   })
+  res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 // save notes (repeat of top, modified)
+// app.save('/api/notes', (req, res) => {
+//   fs.readFile('./db/db.json', 'utf8', (err, data) => {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       const parsedData = JSON.parse(data);
+//       req.body.id = parsedData.length + 1;
+//       parsedData.push(req.body);
+
+//       fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) =>
+//         err ? console.error(err) : console.info(`\n Data saved to db.json`)
+//       )
+//     }
+//   })
+// });
+
+// const saveMiddleware: RequestHandler = (req, res, next) => {
+//  notifyProgress(req.params.channelId, { status: 'save', message: PROGRESS_SAVING });
+//  save(req, res, (err) => {
+//   if (err) next(err);
+//   closeHandler(req, res);
+//   next();
+//  });
+// }
 
 // chain listen() method onto our servers
 app.listen(PORT, () => {
