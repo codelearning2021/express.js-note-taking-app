@@ -6,6 +6,8 @@ A note taker application that makes use of both the back end and front end while
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Animation] (#animation)
+  * [Links] (#links)
   * [License](#license)
   * [Questions](#questions)
   
@@ -20,20 +22,19 @@ A note taker application that makes use of both the back end and front end while
 
   ## Usage 
   - NPM 
-  If the repo is cloned, call npm start on the command line. When on the application, add notes by clicking the pencil icon on the top right and save using the save icon on the top right. Users can view previous notes by clicking on them on the left side list. Users can also delete an item by clicking the trash icon for each note. <br>
-  <img src="relative link here">
-  <img src="relative link here">
+  If the repo is cloned, call npm start on the command line. Click to follow the localhost link. When on the application, add notes by clicking the pencil icon on the top right and save using the save icon on the top right. Users can view previous notes by clicking on them on the left side list. Users can also delete an item by clicking the trash icon for each note. <br>
+
   Link to deployed app on [Heroku](https://calm-fjord-79459.herokuapp.com/)
 
-### Short Demo Animation
-![Deployed Website](link here)
+  ### Animation
+  <img src="https://github.com/codelearning2021/express.js-note-taking-app/blob/main/Assets/Note%20Taker.gif">
+  <img src="https://github.com/codelearning2021/express.js-note-taking-app/blob/main/Assets/localhost%20deploy.gif">
 
-### Links
+  ### Links
 
-
-• Deployed Application URL: 
+  • Deployed Application URL: 
     - 
-• Repository URL: https://github.com/ikaera/Projec
+  • Repository URL: https://github.com/ikaera/Projec
 
   ## License 
   This project is licensed under MIT
