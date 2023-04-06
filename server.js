@@ -52,6 +52,19 @@ app.post('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
+// delete function
+app.delete('/api/notes:id', (req, res) => {const id = req.params.id;
+  let note;
+
+  notes.map((element, index) => {
+    if (element.id == id){
+      note = element
+      notes.splice(index, 1)
+      return res.json(note);
+    } 
+  })
+});
+
 // save notes (repeat of top, modified)
 // app.save('/api/notes', (req, res) => {
 //   fs.readFile('./db/db.json', 'utf8', (err, data) => {
