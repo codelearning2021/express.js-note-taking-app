@@ -32,9 +32,9 @@ A note taker application that makes use of both the back end and front end while
 
   ### Links
 
-  • Deployed Application URL: 
+  • Deployed Application URL: (https://calm-fjord-79459.herokuapp.com/)
     - 
-  • Repository URL: https://github.com/ikaera/Projec
+  • Repository URL: (https://github.com/codelearning2021/express.js-note-taking-app)
 
   ## License 
   This project is licensed under MIT
